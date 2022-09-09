@@ -1,0 +1,331 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+body {
+    line-height:inherit;
+}
+
+/*ホバー系*/
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}
+.title a {
+    color:white;
+}
+.works p a{
+    color: #af6f13;
+}
+
+/*ヘッダー*/
+.header{
+    background-color: black;
+    height:56px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+}
+.header h1 {
+    margin-bottom: 0;
+    line-height: 1.6;  
+}
+.header h1 a {
+    position: fixed;
+    left: 1%;
+}
+
+/*******************
+*
+    ヘッダーメニュー
+*
+*******************/
+
+/*ハンバーガーメニュー*/
+.btn {
+    /*ボタンの配置位置*/
+    position: fixed;
+    top: 4px;
+    right: 16px;
+    /*ボタンの大きさ*/
+    width: 48px;
+    height: 48px;
+    /*最前面に*/
+    z-index: 10;
+    background-color: black; /* わかりやすいように */
+}
+/* 真ん中のバーガー線*/
+.btn-line {
+	display: block;
+	position: relative;  /*バーガー線の位置基準として設定*/
+	width: 100%;  /*線の長さと高さ*/
+	height: 4px;
+	background-color: #d6d5d5;  /*バーガー線の色*/
+	transition: .2s;
+}
+/****** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #d5d5d5;
+    transition: .5s;
+}
+.btn-line::before {
+  /* 上の線の位置 */
+    transform: translate(-16px, -16px);
+}
+.btn-line::after {
+  /* 下の線の位置 */
+    transform: translate(-16px, 16px);
+}
+/***** メニューオープン時 *****/
+.btn-line.open {
+	/* 真ん中の線を透明に */
+	background-color: transparent;
+}
+.btn-line.open::before , .btn-line.open::after {
+	content: "";
+	background-color: #888;
+	transition: .2s;
+}
+.btn-line.open::before {
+	/* 上の線を傾ける */
+    right: 0px;
+	transform: rotate(45deg);
+}
+.btn-line.open::after {
+	/* 上の線を傾ける */
+    right: 0px;
+	transform: rotate(-45deg);
+    
+}
+
+/* メニューのスタイリング */
+.menu {
+    /*メニューの位置マイナス指定で画面外に*/
+    position: fixed;
+    right: -70%;
+    width: 35%;
+    height: 100vh;
+    margin-left: auto;
+    /*メニューを縦に*/
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    background-color: rgba(167, 148, 58, 0.7);
+    transition: .3s;
+}
+.menu-list {
+    width: 100%;
+    height: 100%;
+    /* メニューテキスト位置をリスト内中心に */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu.open {
+    right: 0;
+}
+.menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+/* 900px以上はハンバーガーボタン非表示、ヘッダー固定 */
+@media screen and (min-width: 900px) {
+	.btn {
+		display: none;
+	}
+	.menu {
+		/* メニューを横に */
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 80%;
+		height: 56px;
+        background-color: #000;
+	}
+}
+/*
+.menu li {
+    float: left;
+    width: auto;
+    list-style: none;
+}
+*/
+/*
+.menu-box {
+    right: 1px;
+    line-height: 0;
+    float: right;
+    width: auto;
+    position: fixed;
+}
+*/
+
+
+
+
+
+
+/*ホーム画面*/
+.home {
+    height:100vh;
+    background:url("../images/home.png");
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile h2,.works h2,.works2 h2{
+    text-align: center;
+}
+
+/*いい感じに文字の間隔を開ける*/
+.profile h2,.works h2,.works h2,.skill-area h2,.contact-area h2{
+    padding-bottom: 20px;
+}
+
+/*プロフィール*/
+.profile {
+    display: flex;
+    background-color: #EEEEEE;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.profile h2 {
+    text-align: center;
+    width:100%;
+}
+.profile-box {
+    margin:auto;
+/*    width:1000px;*/
+    display: flex;
+}
+.profile-box img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.profile-text{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+
+/*今まで作った作品*/
+.works{
+    background-color: #ffffff;
+}
+.work-contents{
+    display: flex;
+    margin-left: 27%;
+    margin-right: 27%;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.work-contents p {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*もっとみる*/
+.more {
+    width:300px;
+    height: 75px;
+    text-align: center;
+    font-size: 37px;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #ffba63;/*背景色*/
+    border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+    border-radius: 4px;/*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+}
+.more:active {
+    border-bottom: solid 2px #fd9535;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+.works p{
+    text-align: center;
+}
+/*スキル&コンタクト*/
+.skill-contact-box{
+    background-color: #EEEEEE; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 40px 40px;
+}
+.skill-contact-box img{
+    justify-content:center;
+}
+.skill-area,.contact-area{
+    background-color: #EEEEEE; 
+}
+
+/*スキル*/
+.skill-area {
+    text-align: center;
+    margin-right: 3.5%;
+    padding-right: 3.5%;
+    border-right: 1px solid #8a8a8a;
+}
+.lang {
+    width: 65%;
+}
+
+/*コンタクト*/
+.contact-area{
+    text-align: center;
+}
+
+/*フッター*/
+footer{
+    background-color: black;
+    padding: 40px 0;
+}
+
+footer p{
+    color:#ffffff;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/*ヘッダーに被さらないようにするやつ*/
+.profile,.works {
+    padding:40px 0;
+}
+
+#profile-link,#works-link {
+    padding-top: 55px;
+    margin-top: -55px;
+}
+
+.works2 {
+    padding-top: 55px;
+}
+.works2 h2 {
+    padding-bottom: 20px;
+}
+
+/*小さくすると区切り線が消える*/
+@media screen and (max-width:1390px){
+    .skill-area {
+        border-right: none;
+    }
+}

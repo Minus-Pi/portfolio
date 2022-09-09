@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>フルスクリーン背景</title>
+        <meta charset="UTF-8">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/vegas.min.css"/>
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/vegas.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1><a href="./" class="logo">Logo</a></h1>
+            </header>
+
+            <main>
+
+            </main>
+
+            <footer>
+                <nav>
+                    <ul>
+                        <li><a href="">ページ１</a></li>
+                        <li><a href="">ページ２</a></li>
+                        <li><a href="">ページ３</a></li>
+                        <li><a href="">ページ４</a></li>
+                        <li><a href="">ページ５</a></li>
+                    </ul>
+                </nav>
+                <p>&copy; Sample. All Rights Reserved.</p>
+            </footer>
+        </div><!-- .wrapper -->
+        <script>
+            $(function(){
+                $('body').vegas({ //背景画像でスライドショーしたい場所の設定
+                slides: [
+                    { src: 'images/img01.jpg' }, //スライドする画像を配列で設定
+                    { src: 'images/img02.jpg' }, 
+                    { src: 'images/img03.jpg' },
+                    { src: 'images/img04.jpg' }
+                ],
+                delay: 5000, //スライドまでの時間をミリ秒単位で設定
+                timer: true, //タイマーバーの表示/非表示を切り替え
+                overlay: 'images/01.png', //オーバーレイする画像の設定
+                animation: 'random', //スライドのアニメーションを設定
+                transition: 'blur' , //スライド間のアニメーションを設定
+                transitionDuration: 1000 //エフェクト時間をミリ単位で設定
+                });
+            });
+        </script>
+    </body>
+</html>

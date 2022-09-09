@@ -1,0 +1,85 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    height: 56px;
+    width: 100%;
+    box-shadow: 0 0 10px #dddddd;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+header .container,
+footer .container{
+    display: flex;
+}
+.herder-left,
+.footer-left{
+    margin-right: auto;
+}
+.header-right,
+.footer-right{
+    margin-left: auto;
+}
+.header-logo,
+.footer-logo{
+    height: 40px;
+    margin-top: 8px;
+}
+.header-right a,
+.header-right .current{
+    line-height: 56px;
+    color: #5a5c5f;
+    font-size: 16px;
+    padding: 16px 5px;
+}
+.header-right a + a{
+    margin-left: 5px;
+}
+.header-right .current{
+    font-weight: bold;
+    color: #666;
+}
+.header-right a:hover{
+    background-color: #e2f1ff;
+    transition: background-color 0.5s;
+}
+footer{
+    height: 120px;
+    background-color:  #2f3a44;
+    color: #e8e8e8;
+    padding-top: 20px;
+    display: flex;
+}
+.footer-left{
+  margin-right: auto;
+}
+.footer-right{
+  margin-left: auto;
+  padding-top: 50px;
+}
+.footer-left p{
+    margin-bottom: 8px;
+}
+main{
+    display: block;
+    margin-top: 56px;
+    /*メイン最低高　＝　画面高　－　ヘッダー高　－フッター高*/
+    min-height: calc(100vh - 56px - 120px);
+    padding: 34px 0 60px;
+}
+main .container{
+    color: #5a5c5f;
+}
+h2{
+    margin-bottom: 15px;
+}

@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import url(reset.css);
+/* サイト全体のスタイル */
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    width: 100%;
+    min-width: 1000px;
+}
+
+body{
+    line-height: 1.0;
+    font-family: "メイリオ","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","MS ゴシック","Osaka",sans-serif; 
+font-size: 1.4em;
+}
+
+/* section共通のスタイル */
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-shadow: 3px 3px 1px #333;
+    
+}
+
+section:nth-of-type(odd){
+    background-attachment: fixed;
+}
+
+/* コンテンツを中央に設置するためのスタイル */
+.inner{
+    width: 800px;
+    height: 300px;
+    margin: auto;
+}
+
+/* 見出しと文章のスタイル */
+h1{
+    color:white;
+    font-size: 8rem;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 1px #333;
+}
+
+h1 span{
+    font-size: .5em;
+    margin-left: .5em;
+}
+
+h2{
+    font-size: 4rem;
+    margin-bottom: 1em;
+}
+
+p{
+    font-size: 2.2rem;
+    line-height:1.5;
+}
+
+/* ページトップのスタイル */
+#page-top{
+    background-image: url(../images/e6015929-s.jpg);
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#page-top .my-name{
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+    font-size: 3rem;
+}
+
+/* ページ01のスタイル */
+#page-01{
+    background-image: url(../images/20190728_サイクリング_編集済.jpg);
+}
+
+/* ページ02のスタイル */
+#page-02{
+    background-image: url(../images/EfgLPI6U4AIbTuu.jpg);
+    
+}
+#page-02::before{
+    content:"";
+}
+#page-02 .inner{
+    content: "";
+}
+
+#page-02 img{
+    content: "";
+}
+
+/* ページ03のスタイル */
+#page-03{
+    background-image: url(../images/01.jpg);
+}
+
+/* ページ04のスタイル */
+#page-04{
+    background-image: url(../images/640.jpg);
+}
+
+/* ページ05のスタイル */
+#page-05{
+    background-image: url(../images/eagleshop_fj2000.jpg);
+}
+
+/* ページ06のスタイル */
+#page-06{
+    background-image: url(../images/1_3eay6bi5vpdxnqiekrqli.jpg);
+}
+
+/* ページ07のスタイル */
+#page-07{
+    background-image: url(../images/pose_pien_uruuru_man.png);
+}
